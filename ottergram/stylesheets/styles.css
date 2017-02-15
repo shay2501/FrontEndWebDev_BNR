@@ -14,3 +14,12 @@ body{
 a{
   text-decoration:none;
 }
+
+.thumbnail-image{
+  display: block;
+  width: 100%;
+}
+
+.thumbnail-list{}
+
+.thumbnail-item{}
