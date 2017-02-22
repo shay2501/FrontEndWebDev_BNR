@@ -9,6 +9,17 @@
   font-style:normal;
 }
 
+@font-face{
+  font-family: 'airstreamregular';
+  src: url('fonts/Airstream-webfont.eot');
+  src:url('fonts/Airstream-webfont.eot?#iefix') format('embedded-opentype'),
+      url('fonts/Airstream-webfont.woff') format('woff'),
+      url('fonts/Airstream-webfont.ttf') format('truetype'),
+      url('fonts/Airstream-webfont.svg#airstreamregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body{
   height: 100%;
 }
@@ -32,6 +43,16 @@ body{
 a{
   text-decoration:none;
 }
+
+.main-header{
+  flex:0 1 auto;
+}
+
+.main-content{
+  flex:1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
 .logo-text{
   background:white;
   text-transform:uppercase;
@@ -45,6 +66,10 @@ a{
 }
 
 .thumbnail-list{
+  flex:0 1 auto;
+  order: 2;
+  display:flex;
+  justify-content: space-between;
   list-style: none;
   padding:0px;
   white-space: nowrap;
@@ -52,17 +77,54 @@ a{
 }
 
 .thumbnail-item{
-  display:inline-block;
-  width:120px;
+  min-width: 120px;
+  max-width: 120px;
   border:1px solid rgb(100%, 100%,100%);
   border:1px solid rgba(100%, 100%,100%, 0.8);
 }
 
-.thumbnail-item + .thumbnail-item{
-  margin-top:10px;
-
+.detail-image-container{
+  flex:1 1 auto;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.detail-image-frame{
+  position:relative;
+  text-align:center;
+}
 .detail-image{
-  width:90%;
+  width:70%;
+}
+
+.detail-image-title{
+  position:absolute;
+  bottom:-16px;
+  left:4px;
+  font-family:airstreamregular;
+  color:white;
+  text-shadow: rgba(0,0,0, 0.9) 1px 2px 9px;
+  font-size:40px;
+}
+
+@media all (min-width: 768px){
+  .main-content:{
+    flex-direction:row;
+    overflow:hidden;
+  }
+  .thumbnail-list{
+    flex-direction:column;
+    order:0;
+    margin-left: 20px;
+  }
+
+  .thumbnail-item{
+    max-width:260px;
+  }
+
+  .thumbnail-item + .thumbnail-item{
+    margin-top: 20px;
+  }
+
 }
